@@ -35,7 +35,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "evelyne-octaviana-footballnews.pbp.cs.ui.ac.id"]
 
 CSRF_TRUSTED_ORIGINS = [
-    "<your-pws-deployment-url>"
+    "https://evelyne-octaviana-footballnews.pbp.cs.ui.ac.id"
 ]
 
 # Application definition
