@@ -3,6 +3,8 @@ from main.forms import NewsForm
 from main.models import News
 from django.http import HttpResponse
 from django.core import serializers
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages 
 
 def show_json_by_id(request, news_id):
    try:
@@ -62,3 +64,15 @@ def show_news(request, id):
     }
 
     return render(request, "news_detail.html", context)
+
+def register(request):
+    form = UserCreationForm()
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your account has been successfully created!')
+            return redirect('main:login')
+    context = {'form':form}
+    return render(request, 'register.html', context)
