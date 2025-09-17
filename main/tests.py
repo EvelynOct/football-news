@@ -149,6 +149,7 @@ class FootballNewsFunctionalTest(LiveServerTestCase):
 
         # Go to create news page
         add_button = self.browser.find_element(By.PARTIAL_LINK_TEXT, "Add News")
+        print(self.browser.page_source)
         add_button.click()
 
         # Fill form
