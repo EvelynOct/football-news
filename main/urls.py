@@ -6,6 +6,7 @@ from main.views import login_user
 from main.views import logout_user
 # Tutorial 4
 from main.views import edit_news
+from main.views import delete_news
 
 app_name = 'main'
 
@@ -22,5 +23,6 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     # Tutorial 4
     path('news/<uuid:id>/edit', edit_news, name='edit_news'),
+    path('news/<uuid:id>/delete', delete_news, name='delete_news'),
 ]
 
