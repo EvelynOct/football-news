@@ -4,7 +4,8 @@ from main.views import show_main, create_news, show_news, show_xml, show_json, s
 from main.views import register
 from main.views import login_user
 from main.views import logout_user
-
+# Tutorial 4
+from main.views import edit_news
 
 app_name = 'main'
 
@@ -19,5 +20,7 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', login_user, name='login'),
     path('logout/', logout_user, name='logout'),
+    # Tutorial 4
+    path('news/<uuid:id>/edit', edit_news, name='edit_news'),
 ]
 
